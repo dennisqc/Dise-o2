@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:example/pages/CustomDialog.dart';
 
 class Fisrtpage extends StatelessWidget {
   const Fisrtpage({super.key});
@@ -252,7 +253,14 @@ class Fisrtpage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return CustomDialog(); // Aquí debes retornar tu ventana flotante personalizada
+            },
+          );
+        },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),
