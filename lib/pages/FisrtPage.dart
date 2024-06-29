@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:example/pages/CustomDialog.dart';
 
-
 class Fisrtpage extends StatelessWidget {
   const Fisrtpage({super.key});
 
@@ -9,15 +8,12 @@ class Fisrtpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Utilizando Row para alinear los iconos y el texto central
         title: Row(
-          mainAxisAlignment: MainAxisAlignment
-              .spaceBetween, // Distribuye los hijos equitativamente
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              icon: Icon(Icons.menu), // Primer icono a la izquierda
+              icon: Icon(Icons.menu),
               onPressed: () {
-                // Acción del primer icono
                 print('Menu button pressed');
               },
             ),
@@ -33,7 +29,7 @@ class Fisrtpage extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.search), // Segundo icono a la derecha
+              icon: Icon(Icons.search),
               onPressed: () {
                 print('Search button pressed');
               },
@@ -258,7 +254,7 @@ class Fisrtpage extends StatelessWidget {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return CustomDialog(); // Aquí debes retornar tu ventana flotante personalizada
+              return CustomDialog();
             },
           );
         },

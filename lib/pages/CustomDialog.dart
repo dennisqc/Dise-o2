@@ -6,7 +6,7 @@ class CustomDialog extends StatelessWidget {
     return AlertDialog(
       content: SingleChildScrollView(
         child: ListBody(
-          children: <Widget>[
+          children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Row(
@@ -22,16 +22,25 @@ class CustomDialog extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          ClipOval(
-                            child: Image.network(
-                              "https://plus.unsplash.com/premium_photo-1688891564708-9b2247085923?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRlJTIwcGVyZmlsfGVufDB8fDB8fHww",
-                              fit: BoxFit.cover,
-                              width: 50,
-                              height: 50,
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: ClipOval(
+                              child: Image.network(
+                                "https://plus.unsplash.com/premium_photo-1688891564708-9b2247085923?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm90byUyMGRlJTIwcGVyZmlsfGVufDB8fDB8fHww",
+                                fit: BoxFit.cover,
+                                width: 50,
+                                height: 50,
+                              ),
                             ),
                           ),
                           Column(
-                            children: [Text("Melvin"), Text("Correo")],
+                            children: [
+                              Text("Melvin"),
+                              Text(
+                                "Correo",
+                                style: TextStyle(color: Colors.black54),
+                              )
+                            ],
                           ),
                         ],
                       ),
@@ -51,11 +60,17 @@ class CustomDialog extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Text(
               "Lorem ipsum dolor sit amet consectetur adipiscing elit arcu, vehicula natoque velit etiam felis nibh malesuada",
               style: TextStyle(
                 fontSize: 16,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
               "Lorem ipsum dolor sit amet consectetur adipiscing elit arcu, vehicula natoque velit etiam felis nibh malesuada",
@@ -64,17 +79,98 @@ class CustomDialog extends StatelessWidget {
               ),
             ),
             Text('Puedes añadir más contenido aquí'),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                child: Text(
+                  'Read More',
+                  style: TextStyle(color: Colors.blue),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
+            Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.4),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Icon(Icons.file_present)),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("2 File Attachment"),
+                              Text(
+                                "5.4 mb",
+                                style: TextStyle(color: Colors.black54),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.info_outline_rounded))
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Divider(
+              color: Colors.grey,
+              thickness: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        print("object");
+                      },
+                      icon: Icon(
+                        Icons.arrow_left,
+                        size: 50,
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        print("object");
+                      },
+                      icon: Icon(Icons.delete)),
+                  IconButton(
+                      onPressed: () {
+                        print("object");
+                      },
+                      icon: Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                      )),
+                ],
+              ),
+            )
           ],
         ),
       ),
-      actions: <Widget>[
-        TextButton(
-          child: Text('Cerrar'),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ],
     );
   }
 }
