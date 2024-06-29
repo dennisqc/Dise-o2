@@ -33,7 +33,6 @@ class Fisrtpage extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.search), // Segundo icono a la derecha
               onPressed: () {
-                // Acción del segundo icono
                 print('Search button pressed');
               },
             ),
@@ -44,10 +43,9 @@ class Fisrtpage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 20.0), // Espaciado vertical
+            padding: EdgeInsets.symmetric(vertical: 20.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment
-                  .spaceEvenly, // Distribución equitativa de las opciones
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
                   onTap: () {
@@ -91,13 +89,174 @@ class Fisrtpage extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            child: Center(
-              child: Text('This is the body of FirstPage'),
-            ),
+          Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 28),
+                child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Melvin Sherman",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 22),
+                              ),
+                              Text(
+                                "10:30am",
+                                style: TextStyle(fontSize: 12),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Fonts, Mockups & templates",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Lorem ipsum dolor sit amet consectetur adipiscing elit arcu, vehicula natoque velit etiam felis nibh malesuada",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w300,
+                                color: Color.fromARGB(133, 41, 41, 41)),
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButton.icon(
+                                onPressed: () {},
+                                icon: Icon(Icons.attachment_outlined),
+                                label: Text(
+                                  '2 file attachment',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color.fromARGB(133, 41, 41, 41)),
+                                ),
+                              ),
+                              Text("correo@gmail.com.pe"),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 28),
+                child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.4),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Melvin Sherman",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 22),
+                              ),
+                              Text(
+                                "10:30am",
+                                style: TextStyle(fontSize: 12),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Fonts, Mockups & templates",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Lorem ipsum dolor sit amet consectetur adipiscing elit arcu, vehicula natoque velit etiam felis nibh malesuada",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w300,
+                                color: Color.fromARGB(133, 41, 41, 41)),
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButton.icon(
+                                onPressed: () {},
+                                icon: Icon(Icons.attachment_outlined),
+                                label: Text(
+                                  '2 file attachment',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color.fromARGB(133, 41, 41, 41)),
+                                ),
+                              ),
+                              Text("correo@gmail.com.pe"),
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )),
+              )
+            ],
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
