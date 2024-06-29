@@ -11,7 +11,7 @@ class CustomDialog extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Icon(Icons.back_hand), Icon(Icons.star)],
+                children: [Icon(Icons.arrow_back_ios_new), Icon(Icons.menu)],
               ),
             ),
             Container(
@@ -34,10 +34,11 @@ class CustomDialog extends StatelessWidget {
                             ),
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Melvin"),
+                              Text("Melvin Sherman"),
                               Text(
-                                "Correo",
+                                "Correo@gmail.com",
                                 style: TextStyle(color: Colors.black54),
                               )
                             ],
@@ -86,9 +87,7 @@ class CustomDialog extends StatelessWidget {
                   'Read More',
                   style: TextStyle(color: Colors.blue),
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+                onPressed: () {},
               ),
             ),
             Column(
